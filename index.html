@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urban Dhani | Premium Clothing for Modern India</title>
+<meta name="description" content="Urban Dhani - Premium fashion clothing for men and women. Explore our latest collection with exclusive deals.">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script defer src="js/main.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- HOMEPAGE PROFESSIONAL PURPLE THEME -->
+<style>
+  :root { --hp-accent: #6b46c1; --hp-accent-2: #8b5cf6; --hp-dark: #4c1d95; }
+  .top-bar { background: linear-gradient(90deg, rgba(107,70,193,0.08), rgba(139,92,246,0.06)); color: #5b4070; padding: 10px 0; font-size: 13px; }
+  .logo { background: linear-gradient(135deg, var(--hp-dark) 0%, var(--hp-accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .nav-links a { color: #333; font-weight: 600; }
+  .nav-links a::after { background: var(--hp-accent-2); }
+  .nav-links a:hover { color: var(--hp-accent); }
+  .header-icons span:hover { color: var(--hp-accent); background: rgba(139,92,246,0.08); }
+  .header-icons span span { background: var(--hp-accent-2); }
+  .hero { background: linear-gradient(180deg, rgba(107,70,193,0.15), rgba(139,92,246,0.08)), url('images/4d4a4fa1-d637-4e01-bfee-9b586dc93ca9.jpg') center/cover; min-height: 70vh; position: relative; display: flex; align-items: center; justify-content: center; }
+  .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.15)); z-index: 1; }
+  .hero-content { background: rgba(0,0,0,0.35); padding: 50px 40px; border-radius: 12px; max-width: 900px; position: relative; z-index: 2; }
+  .hero h1 { font-size: 48px; margin-bottom: 12px; font-weight: 800; color: #fff; }
+  .hero-subtitle { font-size: 20px; color: rgba(255,255,255,0.95); margin-bottom: 12px; font-weight: 500; }
+  .hero-lead { font-size: 16px; color: rgba(255,255,255,0.9); margin-bottom: 24px; }
+  .cta-button { background: linear-gradient(90deg, var(--hp-accent) 0%, var(--hp-accent-2) 100%); color: white; padding: 14px 28px; border-radius: 8px; border: none; font-weight: 700; font-size: 15px; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+  .cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(107,70,193,0.3); }
+  .ghost-btn { border: 1px solid rgba(255,255,255,0.2); color: white; padding: 12px 22px; border-radius: 8px; background: transparent; text-decoration: none; font-weight: 600; font-size: 14px; display: inline-block; margin-left: 10px; transition: all 0.2s; }
+  .ghost-btn:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.4); }
+  .hero-features .feature { background: rgba(255,255,255,0.08); border-radius: 8px; padding: 10px 14px; }
+  /* Carousel styling */
+  .hero-carousel { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; }
+  .carousel-slide { position: absolute; width: 100%; height: 100%; top: 0; left: 0; opacity: 0; background-size: cover; background-position: center; transition: opacity 0.8s ease-in-out; animation: fadeInOut 10s infinite; }
+  .carousel-slide:nth-child(1) { animation-delay: 0s; }
+  .carousel-slide:nth-child(2) { animation-delay: 10s; }
+  .carousel-slide:nth-child(3) { animation-delay: 20s; }
+  .carousel-slide:nth-child(4) { animation-delay: 30s; }
+  .carousel-slide:nth-child(5) { animation-delay: 40s; }
+  @keyframes fadeInOut { 0% { opacity: 0; } 10% { opacity: 1; } 20% { opacity: 1; } 30% { opacity: 0; } 100% { opacity: 0; } }
+  
+  /* Premium animations */
+  @keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+  @keyframes slideInLeft { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
+  
+  .hero-content { animation: slideInUp 0.8s ease-out; }
+  .hero h1 { animation: slideInUp 0.8s ease-out 0.1s backwards; }
+  .hero-subtitle { animation: slideInUp 0.8s ease-out 0.2s backwards; }
+  .hero-lead { animation: slideInUp 0.8s ease-out 0.3s backwards; }
+  .hero-ctas { animation: slideInUp 0.8s ease-out 0.4s backwards; }
+  .hero-features { animation: slideInUp 0.8s ease-out 0.5s backwards; }
+  
+  /* Premium card animations */
+  .trending-card { transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+  .trending-card:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 20px 40px rgba(107,70,193,0.2); }
+  .trending-card-image i { transition: all 0.5s ease; }
+  .trending-card:hover .trending-card-image i { transform: scale(1.2) rotate(5deg); }
+  .trending-arrow { transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1); }
+  .trending-card:hover .trending-arrow { transform: translateX(8px) scale(1.15); }
+  
+  /* Benefit items animation */
+  .benefit-item { transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+  .benefit-item:hover { transform: translateY(-10px); box-shadow: 0 16px 32px rgba(107,70,193,0.15); }
+  .benefit-item i { transition: all 0.4s ease; }
+  .benefit-item:hover i { transform: scale(1.25) rotate(-10deg); }
+  
+  /* CTA button premium effects */
+  .cta-button { box-shadow: 0 8px 20px rgba(107,70,193,0.25); transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1); position: relative; overflow: hidden; }
+  .cta-button::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.6s; }
+  .cta-button:hover::before { left: 100%; }
+  .cta-button:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(107,70,193,0.4); }
+  
+  /* Ghost button animation */
+  .ghost-btn { transition: all 0.3s ease; position: relative; }
+  .ghost-btn::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(139,92,246,0.1); border-radius: 8px; opacity: 0; transition: opacity 0.3s; z-index: -1; }
+  .ghost-btn:hover::after { opacity: 1; }
+  .ghost-btn:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.6); }
+  
+  /* Smooth page transitions */
+  * { transition: background-color 0.3s ease, color 0.3s ease; }
+  
+  @media (max-width: 768px) { .hero { min-height: 55vh; } .hero-content { padding: 30px 20px; } .hero h1 { font-size: 32px; } .ghost-btn { margin-left: 0; margin-top: 10px; display: block; width: 100%; } }
+  
+  /* Product Detail Modal */
+  .product-detail-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; align-items: center; justify-content: center; overflow-y: auto; }
+  .product-detail-modal.active { display: flex; }
+  .product-detail-content { background: white; border-radius: 12px; max-width: 900px; width: 90%; margin: 20px auto; padding: 40px; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.3); animation: slideInUp 0.4s ease-out; }
+  .product-detail-close { position: absolute; top: 20px; right: 20px; background: var(--hp-accent); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 20px; transition: all 0.3s; }
+  .product-detail-close:hover { transform: scale(1.1); background: var(--hp-dark); }
+  .product-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .product-detail-image { text-align: center; }
+  .product-detail-image img { width: 100%; max-width: 400px; border-radius: 12px; object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+  .product-detail-info h1 { font-size: 32px; font-weight: 700; color: #333; margin-bottom: 10px; }
+  .product-detail-rating { font-size: 16px; color: #FFB800; margin-bottom: 15px; }
+  .product-detail-price { font-size: 28px; font-weight: 700; color: var(--hp-accent); margin-bottom: 8px; }
+  .product-detail-old-price { font-size: 18px; color: #999; text-decoration: line-through; margin-right: 15px; }
+  .product-detail-discount { color: #FF6B6B; font-weight: 600; }
+  .product-detail-badge { display: inline-block; background: var(--hp-accent-2); color: white; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 15px; }
+  .product-detail-desc { color: #666; font-size: 15px; line-height: 1.6; margin-bottom: 20px; padding: 20px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+  .product-detail-features { margin-bottom: 25px; }
+  .product-detail-features h3 { font-size: 16px; font-weight: 600; color: #333; margin-bottom: 12px; }
+  .product-detail-features ul { list-style: none; padding: 0; }
+  .product-detail-features li { padding: 8px 0; color: #666; font-size: 14px; display: flex; align-items: center; }
+  .product-detail-features li:before { content: '✓'; color: var(--hp-accent); font-weight: 700; margin-right: 10px; }
+  .product-detail-size { margin-bottom: 20px; }
+  .product-detail-size h4 { font-size: 14px; font-weight: 600; color: #333; margin-bottom: 10px; }
+  .size-options { display: flex; gap: 10px; flex-wrap: wrap; }
+  .size-btn { padding: 10px 20px; border: 2px solid #ddd; border-radius: 6px; background: white; cursor: pointer; font-weight: 600; transition: all 0.3s; }
+  .size-btn:hover { border-color: var(--hp-accent); color: var(--hp-accent); }
+  .size-btn.selected { background: var(--hp-accent); color: white; border-color: var(--hp-accent); }
+  .product-detail-color { margin-bottom: 20px; }
+  .product-detail-color h4 { font-size: 14px; font-weight: 600; color: #333; margin-bottom: 10px; }
+  .color-options { display: flex; gap: 15px; }
+  .color-btn { width: 40px; height: 40px; border-radius: 50%; border: 3px solid #ddd; cursor: pointer; transition: all 0.3s; }
+  .color-btn:hover { transform: scale(1.1); }
+  .color-btn.selected { border-color: var(--hp-accent); box-shadow: 0 0 0 2px white, 0 0 0 4px var(--hp-accent); }
+  .product-detail-quantity { margin-bottom: 25px; display: flex; align-items: center; gap: 15px; }
+  .product-detail-quantity h4 { font-size: 14px; font-weight: 600; color: #333; margin: 0; }
+  .quantity-selector { display: flex; align-items: center; border: 1px solid #ddd; border-radius: 6px; width: fit-content; }
+  .quantity-selector button { background: white; border: none; width: 40px; height: 40px; cursor: pointer; font-size: 16px; transition: all 0.2s; }
+  .quantity-selector button:hover { background: #f5f5f5; }
+  .quantity-selector input { width: 50px; border: none; text-align: center; font-size: 16px; font-weight: 600; height: 40px; }
+  .product-detail-actions { display: flex; gap: 15px; margin-bottom: 25px; }
+  .add-detail-cart { flex: 1; padding: 14px 28px; background: var(--hp-accent); color: white; border: none; border-radius: 8px; font-weight: 700; font-size: 16px; cursor: pointer; transition: all 0.3s; }
+  .add-detail-cart:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(107,70,193,0.3); }
+  .add-detail-wishlist { width: 50px; height: 50px; border: 2px solid var(--hp-accent); background: white; color: var(--hp-accent); border-radius: 8px; cursor: pointer; font-size: 20px; transition: all 0.3s; }
+  .add-detail-wishlist:hover { background: var(--hp-accent); color: white; }
+  .product-detail-info { padding-top: 0; }
+  
+  @media (max-width: 768px) { .product-detail-grid { grid-template-columns: 1fr; gap: 20px; } .product-detail-content { padding: 20px; } .product-detail-info h1 { font-size: 24px; } .product-detail-price { font-size: 22px; } }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+<p>Free shipping on orders above ₹999 · 30-day returns</p>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+<div class="container">
+<div class="logo">
+<i class="fas fa-shopping-bag"></i> Urban Dhani
+</div>
+
+<nav class="nav-links">
+<a href="#home">Home</a>
+<a href="#men">Men</a>
+<a href="#women">Women</a>
+<a href="#new">New Arrivals</a>
+<a href="#sale">Sale</a>
+</nav>
+
+<div class="search-box">
+<input type="text" id="search-input" placeholder="Search products...">
+<i class="fas fa-search"></i>
+</div>
+
+<div class="header-icons">
+<span class="account-icon" title="Account"><i class="fas fa-user"></i></span>
+<span class="heart-icon" onclick="openWishlist()" title="Wishlist"><i class="fas fa-heart"></i><span id="wishlist-count">0</span></span>
+<span class="cart-icon" onclick="openCart()" title="Cart"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></span>
+</div>
+</div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero" id="home" aria-label="Hero section">
+  <!-- Sliding carousel background -->
+  <div class="hero-carousel">
+    <div class="carousel-slide" style="background-image: url('images/39bb4a2d-dc12-4657-9769-067cd3265508.jpg');"></div>
+    <div class="carousel-slide" style="background-image: url('images/4d4a4fa1-d637-4e01-bfee-9b586dc93ca9.jpg');"></div>
+    <div class="carousel-slide" style="background-image: url('images/4d4a4fa1-d637-4e01-bfee-9b586dc93ca9 (1).jpg');"></div>
+    <div class="carousel-slide" style="background-image: url('images/85182885-5ec4-4b0f-ba5e-5316a082a097.jpg');"></div>
+    <div class="carousel-slide" style="background-image: url('images/4d4a4fa1-d637-4e01-bfee-9b586dc93ca9.jpg');"></div>
+  </div>
+  
+  <div class="hero-content">
+    <h1>Urban Dhani — Premium Essentials</h1>
+    <p class="hero-subtitle">Crafted for quality, style, and everyday confidence.</p>
+    <p class="hero-lead">Discover timeless collections with careful attention to fabric, fit, and sustainability.</p>
+    <div class="hero-ctas">
+      <button class="cta-button" onclick="document.getElementById('new').scrollIntoView({behavior: 'smooth'})">Shop New Arrivals <i class="fas fa-arrow-right"></i></button>
+      <a class="ghost-btn" href="#sale">View Offers</a>
+    </div>
+
+    <div class="hero-features" aria-hidden="true" style="margin-top: 28px;">
+      <div class="feature"><i class="fas fa-seedling"></i><span style="margin-left: 8px;">Sustainable Fabrics</span></div>
+      <div class="feature"><i class="fas fa-tshirt"></i><span style="margin-left: 8px;">Precision Tailoring</span></div>
+      <div class="feature"><i class="fas fa-shield-alt"></i><span style="margin-left: 8px;">Quality Guaranteed</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRENDING SECTION -->
+<section class="trending">
+<div class="container">
+<h2>🔥 Trending Now</h2>
+<div class="trending-grid">
+<div class="trending-card" onclick="document.getElementById('men').scrollIntoView({behavior: 'smooth'})">
+<div class="trending-card-image">
+<i class="fas fa-shirt"></i>
+</div>
+<div class="trending-card-content">
+<h3>Men's Collection</h3>
+<p>Explore premium styles</p>
+<span class="trending-arrow"><i class="fas fa-arrow-right"></i></span>
+</div>
+</div>
+
+<div class="trending-card" onclick="document.getElementById('women').scrollIntoView({behavior: 'smooth'})">
+<div class="trending-card-image">
+<i class="fas fa-user-tie"></i>
+</div>
+<div class="trending-card-content">
+<h3>Women's Collection</h3>
+<p>Latest designer pieces</p>
+<span class="trending-arrow"><i class="fas fa-arrow-right"></i></span>
+</div>
+</div>
+
+<div class="trending-card" onclick="document.getElementById('new').scrollIntoView({behavior: 'smooth'})">
+<div class="trending-card-image">
+<i class="fas fa-sparkles"></i>
+</div>
+<div class="trending-card-content">
+<h3>New Arrivals</h3>
+<p>Fresh styles weekly</p>
+<span class="trending-arrow"><i class="fas fa-arrow-right"></i></span>
+</div>
+</div>
+
+<div class="trending-card" onclick="document.getElementById('sale').scrollIntoView({behavior: 'smooth'})">
+<div class="trending-card-image">
+<i class="fas fa-tag"></i>
+</div>
+<div class="trending-card-content">
+<h3>Sale & Offers</h3>
+<p>Up to 35% off</p>
+<span class="trending-arrow"><i class="fas fa-arrow-right"></i></span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- BENEFITS SECTION -->
+<section class="benefits">
+<div class="container">
+<div class="benefit-item">
+<i class="fas fa-truck"></i>
+<h3>Free Shipping</h3>
+<p>On orders above ₹999</p>
+</div>
+<div class="benefit-item">
+<i class="fas fa-sync"></i>
+<h3>Easy Returns</h3>
+<p>30-day return policy</p>
+</div>
+<div class="benefit-item">
+<i class="fas fa-lock"></i>
+<h3>Secure Payment</h3>
+<p>100% secure checkout</p>
+</div>
+<div class="benefit-item">
+<i class="fas fa-headset"></i>
+<h3>24/7 Support</h3>
+<p>Dedicated customer service</p>
+</div>
+</div>
+</section>
+
+<!-- MEN'S SECTION -->
+<section class="products" id="men">
+<div class="container">
+<h2>Men's Collection</h2>
+<div class="product-grid" id="men-grid">
+</div>
+</div>
+</section>
+
+<!-- WOMEN'S SECTION -->
+<section class="products" id="women">
+<div class="container">
+<h2>Women's Collection</h2>
+<div class="product-grid" id="women-grid">
+</div>
+</div>
+</section>
+
+<!-- NEW ARRIVALS SECTION -->
+<section class="products" id="new">
+<div class="container">
+<h2>✨ New Arrivals</h2>
+<p class="section-subtitle">Discover the latest trends and exclusive designs</p>
+<div class="product-grid" id="new-grid">
+</div>
+</div>
+</section>
+
+<!-- SALE SECTION -->
+<section class="products" id="sale">
+<div class="container">
+<h2>🔥 Sale & Discounts</h2>
+<p class="section-subtitle">Unbeatable deals on premium fashion</p>
+<div class="product-grid" id="sale-grid">
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+<div class="container">
+<h2>What Our Customers Say</h2>
+<div class="testimonial-grid">
+<div class="testimonial-card">
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>"Amazing quality and fast delivery! Urban Dhani is my go-to for fashion."</p>
+<h4>- Priya Sharma</h4>
+</div>
+<div class="testimonial-card">
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>"Best prices in the market with premium quality. Highly recommended!"</p>
+<h4>- Raj Kumar</h4>
+</div>
+<div class="testimonial-card">
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>"Customer service is exceptional. They resolved my issue instantly."</p>
+<h4>- Anjali Singh</h4>
+</div>
+</div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+<div class="container">
+<h2>Subscribe to Our Newsletter</h2>
+<p>Get exclusive offers and new arrivals delivered to your inbox</p>
+<div class="newsletter-form">
+<input type="email" id="newsletter-email" placeholder="Enter your email">
+<button onclick="subscribeNewsletter()">Subscribe</button>
+</div>
+</div>
+</section>
+
+
+<!-- WISHLIST -->
+<div class="wishlist" id="wishlist">
+<div class="wishlist-header">
+<h2>Your Wishlist</h2>
+<button class="close-btn" onclick="closeWishlist()"><i class="fas fa-times"></i></button>
+</div>
+<div id="wishlist-items"></div>
+<div class="wishlist-footer">
+<button class="checkout-btn" onclick="addAllToCart()">Add All to Cart</button>
+</div>
+</div>
+
+<!-- CART -->
+<div class="cart" id="cart">
+<div class="cart-header">
+<h2>Your Cart</h2>
+<button class="close-btn" onclick="closeCart()"><i class="fas fa-times"></i></button>
+</div>
+<div id="cart-items"></div>
+<div class="cart-footer">
+<div class="total-price">
+<h3>Total: <span id="total-price">₹0</span></h3>
+</div>
+<button class="checkout-btn" onclick="openPayment()">Proceed to Checkout</button>
+</div>
+</div>
+
+<!-- PAYMENT CHECKOUT -->
+<div class="payment-modal" id="payment-modal">
+<div class="payment-header">
+<div class="container">
+<h1><i class="fas fa-shopping-bag"></i> Urban Dhani - Secure Checkout</h1>
+<p>Complete your purchase securely</p>
+</div>
+</div>
+
+<div class="payment-close" onclick="closePayment()"><i class="fas fa-times"></i></div>
+
+<div class="payment-container">
+<div class="payment-content">
+<!-- Left Side: Order Summary -->
+<div class="payment-left">
+<h2>Order Summary</h2>
+<div class="order-items" id="order-items-summary">
+</div>
+<div class="order-total">
+<div class="total-row">
+<span>Subtotal:</span>
+<span id="subtotal">₹0</span>
+</div>
+<div class="total-row">
+<span>Shipping:</span>
+<span id="shipping">₹0</span>
+</div>
+<div class="total-row discount">
+<span>Discount:</span>
+<span id="discount">₹0</span>
+</div>
+<div class="total-row final">
+<span>Total Amount:</span>
+<span id="final-total">₹0</span>
+</div>
+</div>
+</div>
+
+<!-- Right Side: Payment Form -->
+<div class="payment-right">
+<div class="payment-section">
+<h3><i class="fas fa-map-marker-alt"></i> Delivery Address</h3>
+<input type="text" id="full-name" placeholder="Full Name" required>
+<input type="email" id="email" placeholder="Email Address" required>
+<input type="tel" id="phone" placeholder="Phone Number" required>
+<input type="text" id="address" placeholder="Street Address" required>
+<div class="address-row">
+<input type="text" id="city" placeholder="City" required>
+<input type="text" id="state" placeholder="State" required>
+</div>
+<div class="address-row">
+<input type="text" id="pincode" placeholder="Pincode" required>
+<input type="text" id="country" placeholder="Country" value="India" required>
+</div>
+</div>
+
+<div class="payment-section">
+<h3><i class="fas fa-truck"></i> Shipping Method</h3>
+<div class="shipping-options">
+<label class="shipping-option">
+<input type="radio" name="shipping" value="0" checked>
+<span>Standard Shipping (Free) - 5-7 Days</span>
+</label>
+<label class="shipping-option">
+<input type="radio" name="shipping" value="99">
+<span>Express Shipping (₹99) - 2-3 Days</span>
+</label>
+<label class="shipping-option">
+<input type="radio" name="shipping" value="299">
+<span>Next Day Delivery (₹299) - 1 Day</span>
+</label>
+</div>
+</div>
+
+<div class="payment-section">
+<h3><i class="fas fa-credit-card"></i> Payment Method</h3>
+<div class="payment-options">
+<label class="payment-option">
+<input type="radio" name="payment-method" value="card" checked>
+<span><i class="fas fa-credit-card"></i> Credit/Debit Card</span>
+</label>
+<label class="payment-option">
+<input type="radio" name="payment-method" value="upi">
+<span><i class="fas fa-mobile-alt"></i> UPI</span>
+</label>
+<label class="payment-option">
+<input type="radio" name="payment-method" value="netbanking">
+<span><i class="fas fa-university"></i> Net Banking</span>
+</label>
+<label class="payment-option">
+<input type="radio" name="payment-method" value="wallet">
+<span><i class="fas fa-wallet"></i> Digital Wallet</span>
+</label>
+<label class="payment-option">
+<input type="radio" name="payment-method" value="cod">
+<span><i class="fas fa-money-bill"></i> Cash on Delivery</span>
+</label>
+</div>
+</div>
+
+<!-- Card Payment Details -->
+<div class="payment-section" id="card-section">
+<h3>Card Details</h3>
+<input type="text" id="card-name" placeholder="Cardholder Name" required>
+<input type="text" id="card-number" placeholder="Card Number (16 digits)" maxlength="16" required>
+<div class="card-row">
+<input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required>
+<input type="text" id="cvv" placeholder="CVV (3 digits)" maxlength="3" required>
+</div>
+</div>
+
+<div class="payment-section">
+<label class="checkbox-label">
+<input type="checkbox" id="terms-checkbox" required>
+<span>I agree to Terms & Conditions and Privacy Policy</span>
+</label>
+</div>
+
+<button class="pay-btn" onclick="processPayment()">
+<i class="fas fa-lock"></i> Pay Securely - <span id="pay-amount">₹0</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- PRODUCT DETAIL MODAL -->
+<div class="product-detail-modal" id="product-detail-modal">
+  <button class="product-detail-close" onclick="closeProductDetail()"><i class="fas fa-times"></i></button>
+  <div class="product-detail-content">
+    <div class="product-detail-grid">
+      <div class="product-detail-image">
+        <img id="detail-product-image" src="" alt="Product Image">
+      </div>
+      <div class="product-detail-info">
+        <span class="product-detail-badge" id="detail-badge"></span>
+        <h1 id="detail-product-name"></h1>
+        <div class="product-detail-rating" id="detail-rating"></div>
+        
+        <div style="margin: 20px 0;">
+          <span class="product-detail-price" id="detail-price"></span>
+          <span class="product-detail-old-price" id="detail-old-price"></span>
+          <span class="product-detail-discount" id="detail-discount"></span>
+        </div>
+
+        <div class="product-detail-desc" id="detail-description"></div>
+
+        <div class="product-detail-features">
+          <h3>Key Features</h3>
+          <ul id="detail-features">
+            <li>Premium quality material</li>
+            <li>Comfortable fit</li>
+            <li>Durable and long-lasting</li>
+            <li>Professional design</li>
+          </ul>
+        </div>
+
+        <div class="product-detail-color">
+          <h4>Available Colors</h4>
+          <div class="color-options">
+            <button class="color-btn selected" style="background-color: #000;" onclick="selectColor(this)"></button>
+            <button class="color-btn" style="background-color: #1a1a2e;" onclick="selectColor(this)"></button>
+            <button class="color-btn" style="background-color: #4a4a6a;" onclick="selectColor(this)"></button>
+            <button class="color-btn" style="background-color: #6b46c1;" onclick="selectColor(this)"></button>
+          </div>
+        </div>
+
+        <div class="product-detail-size">
+          <h4>Select Size</h4>
+          <div class="size-options">
+            <button class="size-btn selected" onclick="selectSize(this)">XS</button>
+            <button class="size-btn" onclick="selectSize(this)">S</button>
+            <button class="size-btn" onclick="selectSize(this)">M</button>
+            <button class="size-btn" onclick="selectSize(this)">L</button>
+            <button class="size-btn" onclick="selectSize(this)">XL</button>
+            <button class="size-btn" onclick="selectSize(this)">XXL</button>
+          </div>
+        </div>
+
+        <div class="product-detail-quantity">
+          <h4>Quantity:</h4>
+          <div class="quantity-selector">
+            <button onclick="decreaseQuantity()">−</button>
+            <input type="number" id="detail-quantity" value="1" min="1" readonly>
+            <button onclick="increaseQuantity()">+</button>
+          </div>
+        </div>
+
+        <div class="product-detail-actions">
+          <button class="add-detail-cart" onclick="addDetailToCart()">
+            <i class="fas fa-shopping-bag"></i> Add to Cart
+          </button>
+          <button class="add-detail-wishlist" onclick="addDetailToWishlist()" title="Add to Wishlist">
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
+
+        <div style="padding-top: 20px; border-top: 1px solid #eee; color: #666; font-size: 14px;">
+          <p><i class="fas fa-truck"></i> <strong>Free Shipping</strong> on orders above ₹999</p>
+          <p><i class="fas fa-sync"></i> <strong>Easy Returns</strong> within 30 days</p>
+          <p><i class="fas fa-lock"></i> <strong>Secure Checkout</strong> with SSL encryption</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-section">
+<h3>About Urban Dhani</h3>
+<p>We bring premium fashion to modern India with exclusive designs and unbeatable prices.</p>
+<div class="social-links">
+<a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+<a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+<a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+</div>
+</div>
+
+<div class="footer-section">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Shop All</a></li>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h3>Customer Support</h3>
+<ul>
+<li><a href="#">Contact Us</a></li>
+<li><a href="#">Return Policy</a></li>
+<li><a href="#">Shipping Info</a></li>
+<li><a href="#">FAQ</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h3>Contact Info</h3>
+<p>📧 Email: <a href="mailto:info@urbandhani.com">info@urbandhani.com</a></p>
+<p>📞 Phone: <a href="tel:+918000123456">+91 8000-123-456</a></p>
+<p>📍 Address: New Delhi, India</p>
+</div>
+</div>
+
+<div class="footer-bottom">
+<p>&copy; 2026 Urban Dhani. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
